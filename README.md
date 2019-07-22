@@ -1,9 +1,9 @@
 # msc-exploring-neural-networks
  This project investigates different neural network archieture for emotion recognition
  
- ### CNNs
+ ### Simple CNNs
  
- The project begins with constructing a neural network as described in https://ai.google/research/pubs/pub42455. 
+ The project begins with constructing a neural network as described in https://ai.google/research/pubs/pub42455. The paper suggest using a Local response normalization layer but it was swapped 
  
  ### using Pre trained models 
  
@@ -16,14 +16,15 @@ It then goes on to use pretrained models got signle frame image classification b
 Below shows the accurancy of the various designs
 
 
-| Pre-trained model| Early fusion| Late Fusion | Slow Fusion | 
-| ------------------|:-----------:| ----------:| -----------:|
-|                   |              |           |             |
-|                   |              |           |             |
-|                   |              |           |             |
+| Pre-trained model|summary |Single Frame | Early fusion| Late Fusion | Slow Fusion | 
+| ------------------|:-----------:|:-----------:|:-----------:| ----------:| -----------:|
+|  [VGG19](https://keras.io/applications/#vgg19) |image classification model trained on ImageNet  | |              |           |             |
+|  [mobilenetv2](https://keras.io/getting-started/functional-api-guide/)|image classification model trained on ImageNet |      |             |           |             |
+|  [i3d-kinetics-400](https://tfhub.dev/deepmind/i3d-kinetics-400/1)  |video classification model based on trained for action recognition on Kinetics-400.              |     |            |           |             |
 
  
- ### RNN
+ ### RNNs
+ 
  
  
  ### Capsules 
