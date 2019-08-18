@@ -15,19 +15,71 @@
 
 \begin{document}
 
-\begin{abstract}
-\end{abstract}
+    \begin{abstract}
+        This paper investigates the design and building of different neural network architectures for video classification. It begins by constructing a CNN Neural network architecture as described in \citep{KarpathyCVPR14},using the keras and tensorflow packages in python to build the required layer and models. these models where trained using the tensorflow dataset as a source of data. finally it discusses minor adjustments made on model performance and problems found with constructing.
+    \end{abstract}
 
-\maketitle
+    \maketitle
 
-\section{Introduction}
-This paper investigates different neural network architectures for video classification. It begins by constructing a CNN Neural network architecture as described in \citep{KarpathyCVPR14}
+    \section{Introduction}
+    % this sounds like a summary rather than an introduction
+    In past few years, with the increase in large labelled data sets, there has been a rise in the use of different convolution neural networks architectures to solve image classification problems. One example of this large Imagenet dataset as discussed in \cite{JiaDeng2009IAlh} which has been used in the design of different convolutional architectures such as VGG19 as described in \cite{simonyan2014deep} and ResNest \cite{He_2016} which are readily available as pre-trained models in packages such as keras.
+    This models have produced great results when it comes to image classification as discussed further in papers such as \cite{MISHKIN201711}. The use of convolutional neural networks doesn't  stop in the computer vision field with image classification and video classification but also extends to the natural language processing for example with modelling sentences as explained in \cite{Kalchbrenner_2014} and human computer interaction field especially in emotion classification with images and video \cite{knyazev2017convolutional} aswell as  physiological data, speech to name a few.
 
 
-\section{Conclusion}
+    \section{Related Work}
 
-\citep{adams1995hitchhiker}
+    This paper begins by trying to recreate some of these popular models and investigating some popular pretrained models to gain a better understanding of convolutional neural network architectures with the future aim of exploring with emotion classification using image and video data. Something that has been explored in papers such as \cite{SUN201836}
+    % When looking to build most reasches beging by either devloping there own neural network and looking at the archetures of other. one of the issue faces is the the same computational pwoer and hypter paraametres found.
 
-\bibliographystyle{plain}
-\bibliography{references}
+
+    \section{Task}
+    In order to get familiar with building neural networks, the first task involved recreating models used for action classification from \citep{KarpathyCVPR14} then understanding the struture and looking atthe performance of pretrained models CNN models readily available.
+
+    \subsection{Implementation structure}
+    Rather building models from scracth the tensorflow package and keras  packages where used to construct the models and access the pre-trained models.
+
+    \subsection{Datasets}
+    Tensorflow also provides a readily available pre-processed datasets for easy use. The readily available data chosen for this project was the
+    UCF101 is an action recognition data set of realistic action videos, collected from YouTube, having 101 action categories \cite{soomro2012ucf101}. It contains about 13320 videos from 101 action categories,
+    the videos in 101 action categories are grouped into 25 groups, where each group can consist of 4-7 videos of an action, videos from the same group may share some common features, such as similar background, similar viewpoint, etc.
+    The action categories can be divided into five types which include Human-Object Interaction,  Body-Motion Only,  Human-Human Interaction , Playing Musical Instruments and Sports.
+    Tensorflow also provides a train test split of the data where number of training examples are 9537 and the number of test examples are 3783.
+    It also provides the functionality to take a custom spilt of the data and reduce the number of videos used for training. Each clip comtians mutiple frames of 256x256x3.
+    % might be worth summaring the dataset used in karpathy's paper
+
+
+    \subsection{Architectures}
+
+    In Karpathy paper on Large-scale Video Classification with Convolutional Neural Networks \citep{KarpathyCVPR14}.
+    He discusses how videos vary widely in temporal extent and looks to compare the performance of models when using a single frame of from a clip and several contiguous frames in time as well as distance but continuous frames in clip.
+    the paper does this by we extending the connectivity of the network in time dimension to learn spatio-temporal features.
+    As a result the paper looks ar constructing a Single frame, Early Fusion, Late Fusion and Slow Fusion model.
+    The single frame model is loosely based on the Alexnet model \cite{NIPS2012_4824}. This was reconstructed using tensorflow and keras function.
+    The single frame model also serves as the base of the other models.Another architectures explored was the MobileNetV2 pertrained model available in keras \cite{Sandler_2018}.
+
+    \subsection{Optimizations}
+
+    Karpathy's models uses the local response normalization \cite{ROBINSON20071631} also used in the alexnet paper\cite{NIPS2012_4824}, however this layer implementation was no long available in keras as a better normalization method is the batch normalization \cite{ioffe2015batch}. In order to active the local response normalization layer, the tensorflow implementation was wrapped in a keras layer. The models were also constructed using the recommended batch normalization in order to compare the results.
+    Karpathy's paper also using downpour stochastic gradient descent but other optimization methods such as sparse categorical crossentropy.
+    Other hyperparamenrts used to improve performance included the  the learning rate, dropout, initial values and batch size.
+
+    \subsection{Computation Power}
+    The models ran for on average about 30 - 50 minutes per epochs, so testing was mostly done for 1 epoch. Once most models had been tested they where ran on the ucl clusters with 2 gpus.
+
+    \section{Experiment}
+    \subsection{LRN vs Batch normalization}
+    \subsection{Temporal relationships}
+    \subsection{single frame models with fusion models}
+    \subsection{performance of pretrained models with multi frames}
+
+
+    \section{Results}
+
+
+    \section{Conclusion}
+
+
+    \bibliographystyle{plain}
+    \bibliography{references}
 \end{document}
