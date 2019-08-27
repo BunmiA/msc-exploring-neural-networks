@@ -25,3 +25,12 @@ def convert_to_tuple(dataset):
     x = dataset["video"]
     y = dataset["label"]
     return x,y
+
+
+def get_label(dataset):
+    x = dataset["label"]
+    return x
+
+def get_video(dataset):
+    x = dataset["video"]
+    return x

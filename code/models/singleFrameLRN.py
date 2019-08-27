@@ -1,13 +1,8 @@
 import tensorflow as tf
 import tensorflow_datasets as tfds
-import os
-import zipfile
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import numpy as np
-import pydot
-import formater as f
-from tools import MyLRNLayer
+import formaters as f
+import lrnNormalization as l
+import myCallbacks as c
 
 tf.compat.v1.enable_eager_execution()
 
@@ -18,10 +13,6 @@ print(type(ucf101_info))
 assert isinstance(ucf101_train, tf.data.Dataset)
 assert isinstance(ucf101_test, tf.data.Dataset)
 
-#print('number of training examples:', ucf101_info.splits["train"].num_examples)
-#print('number of test examples:', ucf101_info.splits["test"].num_examples)
-#print('number of labels:', ucf101_info.features["label"].num_classes)
-
 train = ucf101_train.map(f.format_videos)
 train = train.map(f.select_first_frame)
 train = train.map(f.convert_to_tuple)
@@ -31,23 +22,22 @@ test = test.map(f.select_first_frame)
 test = test.map(f.convert_to_tuple)
 
 BATCH_SIZE = 32
-SHUFFLE_BUFFER_SIZE = 2 #1000
+SHUFFLE_BUFFER_SIZE = 20 #1000
 train_batches = train.shuffle(SHUFFLE_BUFFER_SIZE).batch(BATCH_SIZE)
 test_batches = test.batch(BATCH_SIZE)
 
 model = tf.keras.models.Sequential([
     tf.keras.layers.Conv2D(96, (11,11), strides=3 , activation='relu', input_shape=(170, 170, 3)),
 
-    MyLRNLayer(),
+    l.MyLRNLayer(),
     tf.keras.layers.MaxPooling2D(2, 2),
     tf.keras.layers.Conv2D(256, (5,5), strides=1, activation='relu'),
 
-    MyLRNLayer(),
-    tf.keras.layers.Conv2D(384, (3,3), strides=1, activation='relu'),
-    tf.keras.layers.MaxPooling2D(2,2),
-
+    l.MyLRNLayer(),
+    tf.keras.layers.MaxPooling2D(2, 2),
     tf.keras.layers.Conv2D(384, (3,3), strides=1, activation='relu'),
 
+    tf.keras.layers.Conv2D(384, (3,3), strides=1, activation='relu'),
     tf.keras.layers.Conv2D(256, (3,3), strides=1, activation='relu'),
 
     tf.keras.layers.MaxPooling2D(2,2),
@@ -58,14 +48,20 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dense(101, activation='softmax')
 ])
 
+callbacks = c.highAccCallback()
 
+print('\n# creating single frame model using Local response normalization')
+model.summary()
 
-model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+sgd = tf.keras.optimizers.SGD(lr=1e-3, momentum=0.9, decay=0.0005)
+
+model.compile(optimizer=sgd, loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 
 model.fit(train_batches,
-          epochs=1,
-          verbose=1)
+          epochs=10,
+          verbose=1,
+          callbacks=[callbacks])
 
 print('\n# Evaluate on test data')
-results = model.evaluate(test_batches, batch_size=32)
+results = model.evaluate(test_batches)
 print('test loss, test acc:', results)
