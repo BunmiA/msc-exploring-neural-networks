@@ -20,6 +20,7 @@ train_multi_frame_1 = train_multi_frame_1.map(f.get_video)
 
 test_multi_frame_1 = ucf101_test.map(f.format_videos)
 test_multi_frame_1 = test_multi_frame_1.map(lambda x: f.select_frame_from_i_to_T(x,0,4))
+test_multi_frame_1 = test_multi_frame_1.map(f.get_video)
 
 
 train_multi_frame_2 = ucf101_train.map(f.format_videos)
