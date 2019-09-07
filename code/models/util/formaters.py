@@ -1,4 +1,5 @@
 import tensorflow as tf
+import random as r
 
 def format_videos(dataset, IMG_SIZE=170):
     dataset["video"] = tf.cast(dataset["video"], tf.float32)
@@ -34,3 +35,29 @@ def get_label(dataset):
 def get_video(dataset):
     x = dataset["video"]
     return x
+
+def select_frame_mid(dataset):
+    size =  dataset["video"].shape[0]
+    T  = round(size/2)
+    dataset["video"] = dataset["video"][T]
+    return dataset
+
+def select_random_frame(dataset):
+    # print('shape',dataset["video"])
+    # size = dataset["video"].shape[0] - 1
+    # T  = r.randint(0, size)
+    # print(size)
+    T = r.randint(0, 26)
+    dataset["video"] = dataset["video"][T]
+    return dataset
+
+
+def select_frame_mid_btw(dataset,i, T):
+    size =  dataset["video"].shape[0]
+    T  = round(size/2)
+    dataset["video"] = dataset["video"][T]
+    return dataset
+
+def format_normalize_image(dataset):
+    dataset["video"] = (dataset["video"]/255)
+    return dataset
