@@ -51,7 +51,7 @@ model = tf.keras.Sequential([
     prediction_layer
 ])
 
-base_learning_rate = 0.0001
+base_learning_rate = 0.1
 model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=base_learning_rate),
               loss='binary_crossentropy',
               metrics=['accuracy'])
