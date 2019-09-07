@@ -56,7 +56,7 @@ model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=base_learning_rate),
 model.summary()
 
 model.fit(train_batches,
-          epochs=1,verbose=1,
+          epochs=5,verbose=1,
           callbacks=[callbacks] )
 
 print('\n# Evaluate on test data')
