@@ -1,8 +1,8 @@
 import tensorflow as tf
-import myCallbacks as c
 import tensorflow_datasets as tfds
 import formaters as f
 import myCallbacks as c
+
 IMG_SIZE = 170
 IMG_SHAPE = (IMG_SIZE, IMG_SIZE, 3)
 BATCH_SIZE = 32
