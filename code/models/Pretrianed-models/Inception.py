@@ -27,7 +27,7 @@ test_batches = test.batch(BATCH_SIZE)
 IMG_SIZE = 170
 IMG_SHAPE = (IMG_SIZE, IMG_SIZE, 3)
 
-callbacks = c.highAccCallback()
+callbacks = c.nintyAccCallback()
 
 callbacks = c.highAccCallback()
 base_model = tf.keras.applications.inception_v3.InceptionV3(input_shape=IMG_SHAPE,

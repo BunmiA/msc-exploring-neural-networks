@@ -26,7 +26,7 @@ test_batches = test.batch(BATCH_SIZE)
 IMG_SIZE = 170
 IMG_SHAPE = (IMG_SIZE, IMG_SIZE, 3)
 
-callbacks = c.highAccCallback()
+callbacks = c.nintyAccCallback()
 
 callbacks = c.highAccCallback()
 base_model = tf.keras.applications.vgg19.VGG19(input_shape=IMG_SHAPE,
@@ -52,9 +52,11 @@ model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=base_learning_rate),
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
+print('\n# creating model using vgg pretrained model')
+
 model.summary()
 
-print('\n# creating model using vgg pretrained model')
+
 
 model.fit(train_batches,
           epochs=5,verbose=1,
