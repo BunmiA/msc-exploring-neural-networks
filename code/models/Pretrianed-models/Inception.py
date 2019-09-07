@@ -55,6 +55,8 @@ model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=base_learning_rate),
               loss='binary_crossentropy',
               metrics=['accuracy'])
 
+print('\n# creating model using inception pretrained model')
+
 model.summary()
 
 model.fit(train_batches,

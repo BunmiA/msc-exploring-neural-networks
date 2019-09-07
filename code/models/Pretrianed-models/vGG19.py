@@ -54,6 +54,8 @@ model.compile(optimizer=tf.keras.optimizers.RMSprop(lr=base_learning_rate),
 
 model.summary()
 
+print('\n# creating model using vgg pretrained model')
+
 model.fit(train_batches,
           epochs=5,verbose=1,
           callbacks=[callbacks] )
