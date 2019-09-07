@@ -65,7 +65,3 @@ model.fit(train_batches,
 print('\n# Evaluate on test data')
 results = model.evaluate(test_batches)
 print('test loss, test acc:', results)
-
-print('\n# Evaluate on test data')
-results = model.evaluate(test_batches)
-print('test loss, test acc:', results)

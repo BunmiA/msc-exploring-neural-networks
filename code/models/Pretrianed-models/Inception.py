@@ -60,4 +60,7 @@ model.summary()
 model.fit(train_batches,
           epochs=5,verbose=1,
           callbacks=[callbacks] )
-#                     validation_da
+
+print('\n# Evaluate on test data')
+results = model.evaluate(test_batches)
+print('test loss, test acc:', results)

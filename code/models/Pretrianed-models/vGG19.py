@@ -3,7 +3,6 @@ import myCallbacks as c
 import formaters as f
 import tensorflow_datasets as tfds
 
-
 ucf101_dataset, ucf101_info = tfds.load(name="ucf101", with_info=True)
 ucf101_train , ucf101_test = ucf101_dataset["train"], ucf101_dataset["test"]
 print(type(ucf101_info))
