@@ -29,7 +29,7 @@ test_start = test_start.map(f.get_video)
 
 
 train_end = ucf101_train.map(f.format_videos)
-train_end = train_end.map(lambda x: f.select_frame_at_T(x,10))
+train_end = train_end.map(lambda x: f.select_frame_at_T(x,15))
 train_end_all = train_end
 train_end_label = train_end.map(f.get_label)
 train_end = train_end.map(f.get_video)
@@ -38,7 +38,7 @@ train_end = train_end.map(f.get_video)
 # train_end, train_end_label = train_end.map(convert_to_tuple)
 
 test_end = ucf101_test.map(f.format_videos)
-test_end = test_end.map(lambda x: f.select_frame_at_T(x,10))
+test_end = test_end.map(lambda x: f.select_frame_at_T(x,15))
 test_end_all = test_end
 test_end_label = test_end.map(f.get_label)
 test_end = test_end.map(f.get_video)
