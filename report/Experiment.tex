@@ -1,0 +1,33 @@
+\section{Experiment}
+% -	Whenever you describe these, you need to list, and precisely describe: the contender models, and how they were trained/tuned; the performance metrics; the evaluation set-up, including data and re-sampling for performance estimation
+% -	There’s probably something wrong with he LRN layer, please check.
+% -	If you use dropout, you may have to adjust learning rates, please check. Not doing so would explain bad results.
+
+    A few experiments where held to compare performance such as Local response normalization vs batch normalization.
+    \subsection{LRN vs Batch normalization}
+    For all models described in \citep{KarpathyCVPR14} which includes the single frame, early fusion, late fusion and slow fusion models, a version was constructed with the proposed local response normalization then an equivalent was also constructed with the more relevant batch normalization.  
+
+    \subsection{data augmentation}
+    %t need to find papers for the 255 thing%
+    The \citep{KarpathyCVPR14} paper talks about using certain augmentation on data. some of these where attempted using keras and tensorflow libraries. One thing is the images where normalized by taking the average  which 117 from each image but my images where normalized by dividing by 255 which is quite a normal technique in papers such as
+    the Keras API offers and Image Augumenation 
+    
+    
+    
+    \subsection{random image}
+    %todo calculation for the video length for the random generator min clips is 1.06, 25fp so 26%
+    karphyies paper talks about how the single frame model was better than most models nad one 
+    way of doing this was to trying to also select a random image from one video because it is not clear that he did this. This was difficult becuase the video length is a variable for each viddeo so it was difficult to get out the size instead and assumption was made that each video was about 200 frames long and a random value  was selected \citep{soomro2012ucf101} min length and the frames per second.
+    
+    
+    \subsection{Temporal relationships}
+     In this experiment we simple compares the performance of the different models similar to that in \citep{KarpathyCVPR14}.  the performace of the 
+     
+    \subsection{performance of pretrained models}
+    Here we compare the perormaces of the previously dicussed pre trained models
+    
+    \subsection{performance of pretrained models with multi frames}
+    In this experiment we simple look at how adding some temporal information will affect the models using pretrained models as the base layer.
+ 
+    % \subsection{RNN}
+    % trying 

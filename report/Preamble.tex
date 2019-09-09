@@ -1,0 +1,31 @@
+% I may change the way this is done in a future version, 
+%  but given that some people needed it, if you need a different degree title 
+%  (e.g. Master of Science, Master in Science, Master of Arts, etc)
+%  uncomment the following 3 lines and set as appropriate (this *has* to be before \maketitle)
+% \makeatletter
+% \renewcommand {\@degree@string} {Master of Things}
+% \makeatother
+
+\title{Investigating and implementing neural network architectures for video classification}
+\author{Olubunmi Aworanti}
+\department{Department of Statistical Science}
+
+\maketitle
+\makedeclaration
+
+\begin{abstract} % 300 word limit
+  This paper investigates the design and building of different neural network architectures for video classification using tensorflow and the keras API. It begins by constructing a CNN Neural network architecture as described in \citep{KarpathyCVPR14}, using the keras API and tensorflow packages in python to build the required layer and models. these models where trained using the tensorflow UCF101 dataset. Finally it discusses minor adjustments made on model the performance and problems found with constructing and running these models.
+\end{abstract}
+
+\begin{acknowledgements}
+Acknowledge all the things!
+\end{acknowledgements}
+
+\setcounter{tocdepth}{2} 
+% Setting this higher means you get contents entries for
+%  more minor section headers.
+
+\tableofcontents
+\listoffigures
+\listoftables
+

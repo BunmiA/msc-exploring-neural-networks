@@ -1,0 +1,74 @@
+
+    \section{Results}
+     The table \ref{lrnvsbatch} shows the performance of the models using both batch normalization and local response normalization running on a node containing two GPUs. From the table below it is clear to see batch normalization is superior
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ |l|c|c|c| } 
+ \hline
+ model & epoch & accuracy & loss \\ 
+  \hline
+ single frame LRN & 10 & 0.0479 & 4.2867 \\ 
+ single frame batch  & 10 & 0.9158 & 0.3518 \\ 
+ early fusion LRN & 10 & 0.0893 & 3.9725 \\
+ early fusion batch & 10 & 0.9467 &  0.2447  \\
+ late fusion LRN & 3 & 0.0194 &  4.6014  \\
+ late fusion batch & 3 & 0.3929  & 2.5302 \\
+ slow fusion LRN & 3 & 0.0246 & 4.5663  \\
+ slow fusion batch & 3 & 0.3764  & 2.5714  \\
+ \hline
+\end{tabular}
+\caption{Batch vs LRN normalization}
+\label{lrnvsbatch}
+\end{center}
+\end{table}
+
+Table \ref{fusions} looks to compare the batch normalization particularly comparing those with different temporal relationships.
+% todo compsre with paper results 
+
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ |l|c|c|c| } 
+ \hline
+ model & epoch &accuracy & loss \\ 
+  \hline
+ single frame batch  & 20   & 0.236 & 6.338 \\ 
+ early fusion batch  & 20 & 0.2437 &  6.475  \\
+ late fusion batch   & 10 & 0.21147 & 5.55 \\
+%  slow fusion batch   & 10 &  &  \\
+ \hline
+\end{tabular}
+\caption{ Performance on test dataset by models with different temporal relationships}
+\label{fusions}
+\end{center}
+\end{table}
+slow fusion took a long time to train 
+
+The table below compares the performance of models using pretrained models as a base model over 1 epoch and 50\% dropout 
+
+% todo add column for validation on one epoch
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{ |l|c|c|c| } 
+ \hline
+ model & epoch & accuracy & loss \\ 
+  \hline
+ ResNet & 1 & 0.0106  & 238.3496   \\ 
+ Inception & 1 & 0.0106 & 235.1907 \\ 
+ MobileNetv2 & 1 & 0.0106  &  238.1989  \\
+ VGG19 & 1 & 0.0106 &  229.1289  \\
+ \hline
+\end{tabular}
+\caption{Pretrained models 1 epooch results}
+\label{pretrained}
+\end{center}
+\end{table}
+
+One interesting to note from table \ref{pretrained} is that the accuracy of all the models after the first epoch are the same but the loss are sliglty different.
+
+
+\subsection{Optimization}
+%todo mention next step is parameter searching using different techniques
+Adam did not made any difference which was dissapoint but more work would have need to test out the paraments
+ 
+
+
