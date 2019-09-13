@@ -17,8 +17,9 @@ train = train.map(i.centerCropAndRezise)
 train = train.map(f.format_normalize_image)
 train = train.map(f.convert_to_tuple)
 
-test = ucf101_test.map(f.select_first_frame)
-test = ucf101_test.map(f.format_normalize_image)
+test = ucf101_test.map(f.format_videos)
+test = test.map(f.select_first_frame)
+# test = ucf101_test.map(f.format_normalize_image)
 test = test.map(f.convert_to_tuple)
 
 BATCH_SIZE = 32

@@ -8,7 +8,7 @@ tf.compat.v1.enable_eager_execution()
 
 ucf101_dataset, ucf101_info = tfds.load(name="ucf101", with_info=True)
 ucf101_train , ucf101_test = ucf101_dataset["train"], ucf101_dataset["test"]
-print(type(ucf101_info))
+print(ucf101_info)
 assert isinstance(ucf101_train, tf.data.Dataset)
 assert isinstance(ucf101_test, tf.data.Dataset)
 
