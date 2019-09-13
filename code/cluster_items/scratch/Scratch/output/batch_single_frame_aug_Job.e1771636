@@ -1,0 +1,149 @@
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorflow/python/framework/dtypes.py:516: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorflow/python/framework/dtypes.py:517: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorflow/python/framework/dtypes.py:518: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorflow/python/framework/dtypes.py:519: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorflow/python/framework/dtypes.py:520: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorflow/python/framework/dtypes.py:525: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorboard/compat/tensorflow_stub/dtypes.py:541: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint8 = np.dtype([("qint8", np.int8, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorboard/compat/tensorflow_stub/dtypes.py:542: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint8 = np.dtype([("quint8", np.uint8, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorboard/compat/tensorflow_stub/dtypes.py:543: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint16 = np.dtype([("qint16", np.int16, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorboard/compat/tensorflow_stub/dtypes.py:544: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_quint16 = np.dtype([("quint16", np.uint16, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorboard/compat/tensorflow_stub/dtypes.py:545: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  _np_qint32 = np.dtype([("qint32", np.int32, 1)])
+/shared/ucl/apps/tensorflow/1.14.0/gpu/tensorboard/compat/tensorflow_stub/dtypes.py:550: FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated; in a future version of numpy, it will be understood as (type, (1,)) / '(1,)type'.
+  np_resource = np.dtype([("resource", np.ubyte, 1)])
+WARNING: Logging before flag parsing goes to stderr.
+W0909 23:43:47.921947 47449703982144 lazy_loader.py:50] 
+The TensorFlow contrib module will not be included in TensorFlow 2.0.
+For more information, please see:
+  * https://github.com/tensorflow/community/blob/master/rfcs/20180907-contrib-sunset.md
+  * https://github.com/tensorflow/addons
+  * https://github.com/tensorflow/io (for I/O related ops)
+If you depend on functionality not listed there, please file an issue.
+
+2019-09-09 23:43:51.919804: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcuda.so.1
+2019-09-09 23:43:52.373755: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:58:00.0
+2019-09-09 23:43:52.374897: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 1 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:d8:00.0
+2019-09-09 23:43:52.553525: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-09-09 23:43:53.302072: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-09-09 23:43:53.478876: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2019-09-09 23:43:53.725929: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2019-09-09 23:43:54.237144: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2019-09-09 23:43:54.475753: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2019-09-09 23:43:55.938124: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-09-09 23:43:55.943923: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0, 1
+2019-09-09 23:43:55.959735: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 AVX512F FMA
+2019-09-09 23:43:56.342392: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4ebaf00 executing computations on platform CUDA. Devices:
+2019-09-09 23:43:56.342450: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2019-09-09 23:43:56.342466: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (1): Tesla P100-PCIE-16GB, Compute Capability 6.0
+2019-09-09 23:43:56.607636: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 2300000000 Hz
+2019-09-09 23:43:56.621724: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x4f37030 executing computations on platform Host. Devices:
+2019-09-09 23:43:56.621757: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): <undefined>, <undefined>
+2019-09-09 23:43:56.625466: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 0 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:58:00.0
+2019-09-09 23:43:56.626535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1640] Found device 1 with properties: 
+name: Tesla P100-PCIE-16GB major: 6 minor: 0 memoryClockRate(GHz): 1.3285
+pciBusID: 0000:d8:00.0
+2019-09-09 23:43:56.626629: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-09-09 23:43:56.626655: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-09-09 23:43:56.626674: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcufft.so.10.0
+2019-09-09 23:43:56.626694: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcurand.so.10.0
+2019-09-09 23:43:56.626713: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusolver.so.10.0
+2019-09-09 23:43:56.626732: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcusparse.so.10.0
+2019-09-09 23:43:56.626751: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-09-09 23:43:56.630565: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1763] Adding visible gpu devices: 0, 1
+2019-09-09 23:43:56.657121: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudart.so.10.0
+2019-09-09 23:43:56.660165: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1181] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-09-09 23:43:56.660245: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1187]      0 1 
+2019-09-09 23:43:56.679660: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 0:   N Y 
+2019-09-09 23:43:56.679692: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1200] 1:   Y N 
+2019-09-09 23:43:56.694932: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 15216 MB memory) -> physical GPU (device: 0, name: Tesla P100-PCIE-16GB, pci bus id: 0000:58:00.0, compute capability: 6.0)
+2019-09-09 23:43:56.696868: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1326] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 15216 MB memory) -> physical GPU (device: 1, name: Tesla P100-PCIE-16GB, pci bus id: 0000:d8:00.0, compute capability: 6.0)
+2019-09-09 23:43:56.760110: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: __inference_Dataset_flat_map_read_one_file_14
+2019-09-09 23:43:56.760312: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: __inference_Dataset_map_ExampleParser.parse_example_28
+2019-09-09 23:43:56.928294: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_112
+2019-09-09 23:43:56.928515: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_113
+2019-09-09 23:43:56.935698: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_true_101
+2019-09-09 23:43:56.935851: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_false_102
+2019-09-09 23:43:56.935924: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_112
+2019-09-09 23:43:56.935999: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_113
+2019-09-09 23:43:56.948891: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_true_82
+2019-09-09 23:43:56.949083: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_false_83
+2019-09-09 23:43:56.949152: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_true_101
+2019-09-09 23:43:56.949188: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_false_102
+2019-09-09 23:43:56.949237: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_112
+2019-09-09 23:43:56.949302: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_113
+2019-09-09 23:43:56.959978: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: sequence_decode_while_cond_52
+2019-09-09 23:43:56.960078: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: sequence_decode_while_body_53
+2019-09-09 23:43:56.960186: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_true_82
+2019-09-09 23:43:56.960248: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_false_83
+2019-09-09 23:43:56.960302: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_true_101
+2019-09-09 23:43:56.960361: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_false_102
+2019-09-09 23:43:56.960406: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_112
+2019-09-09 23:43:56.960465: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_113
+W0909 23:43:56.963444 47449703982144 dataset_builder.py:439] Warning: Setting shuffle_files=True because split=TRAIN and shuffle_files=None. This behavior will be deprecated on 2019-08-06, at which point shuffle_files=False will be the default for all splits.
+2019-09-09 23:43:56.984807: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: __inference_Dataset_flat_map_read_one_file_205
+2019-09-09 23:43:56.984964: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: __inference_Dataset_map_ExampleParser.parse_example_219
+2019-09-09 23:43:57.056287: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_303
+2019-09-09 23:43:57.056492: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_304
+2019-09-09 23:43:57.061317: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_true_292
+2019-09-09 23:43:57.061384: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_false_293
+2019-09-09 23:43:57.061435: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_303
+2019-09-09 23:43:57.061491: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_304
+2019-09-09 23:43:57.072061: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_true_273
+2019-09-09 23:43:57.072151: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_false_274
+2019-09-09 23:43:57.072207: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_true_292
+2019-09-09 23:43:57.072239: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_false_293
+2019-09-09 23:43:57.072278: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_303
+2019-09-09 23:43:57.072330: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_304
+2019-09-09 23:43:57.082754: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: sequence_decode_while_cond_243
+2019-09-09 23:43:57.082889: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: sequence_decode_while_body_244
+2019-09-09 23:43:57.083041: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_true_273
+2019-09-09 23:43:57.083105: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: decode_image_cond_jpeg_false_274
+2019-09-09 23:43:57.083161: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_true_292
+2019-09-09 23:43:57.083196: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_png_false_293
+2019-09-09 23:43:57.083239: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_true_303
+2019-09-09 23:43:57.083300: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: cond_gif_false_304
+2019-09-09 23:43:57.170420: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: random_flip_left_right_true_429
+2019-09-09 23:43:57.170688: W tensorflow/core/common_runtime/eager/context.cc:371] Added two functions with the same name: random_flip_left_right_false_430
+2019-09-09 23:44:00.152362: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+W0909 23:44:04.413062 47449703982144 deprecation.py:323] From /shared/ucl/apps/tensorflow/1.14.0/gpu/tensorflow/python/ops/math_grad.py:1250: add_dispatch_support.<locals>.wrapper (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+2019-09-09 23:44:06.118878: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcublas.so.10.0
+2019-09-09 23:44:07.339682: I tensorflow/stream_executor/platform/default/dso_loader.cc:42] Successfully opened dynamic library libcudnn.so.7
+2019-09-09 23:55:31.208185: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 00:06:54.466694: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 00:18:01.538954: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 00:29:21.643992: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 00:40:34.481813: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 00:51:48.064813: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 01:03:03.921241: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 01:14:07.574811: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 01:25:30.010491: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 01:36:50.918059: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 01:48:15.839307: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 02:00:49.782797: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 02:13:05.229737: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 02:25:50.734315: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 02:38:32.331191: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 02:50:52.590604: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 03:03:27.760949: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 03:15:52.356848: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+2019-09-10 03:28:20.610492: W ./tensorflow/core/framework/model.h:213] Encountered a stop event that was not preceded by a start event.
+tar: Removing leading `/' from member names
