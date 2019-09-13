@@ -3,80 +3,49 @@
 % Inline citation: \bibentry{example-citation}
 
 \section{Aim}
-The aim of this project is to understand how to implement neural network architectures and how they can be implemented given the software available today. The original goal was to create a machine vision tool for understanding emotion but in order to create such a tool one most first understand the basics of machine learning for image and video classification. The project is an exploratory one that follows my initial journey in understanding and implementing neural network architectures for video classification by first recreating architecture for action recognition in videos as presented in \bibentry{KarpathyCVPR14} using TensorFlow and the Keras API.
+This project aims to understand how to implement neural network architectures and how they can be implemented given the software available today. 
+The intent behind this is to one day create a machine vision tool for understanding emotion. However, to get to that stage, one must first understand the basics of machine learning for image and video classification. 
+The project is an exploratory one that follows my initial journey in understanding and implementing neural network architectures for video classification. 
+It begins by first trying to recreate the models for action recognition in videos as presented in \bibentry{KarpathyCVPR14}.
+ It goes on to explore various pre-trained models and looks for ways to improve the architecture, taking into account temporal features. 
+It looks at multiple training algorithms and understanding the effects of some hyperparameters and some performance optimization method. However, it's primary focus is on the implementation of models and understanding the frameworks used. 
 
-\section{Theory}
-%needs more references%
-\subsection{Neural networks}
-To first begin we must understand what a neural network is, a neural network is a network of artificial neurons sometimes called a perceptron, a perceptron takes in an inputs $x_i$, and uses trainable weights $w_i$, a bias $b$ and a given activation function to predict the expected output $y_i$. Figure \ref{fig:neuron} provides an image representing a neuron. The activation functions commonly used include 
+Due to the high computation power and long-running time needed for machine vision tasks, another aim of this project is to understand how to set up the training of these models on systems with better computer resources. 
+This was accomplished by learning to set up batch jobs for model training on the UCL cluster, Myriad.
+% It then hopes to explore the effects of temporal features on the simple model as dicussed in \citep{KarpathyCVPR14} as well as other topics such as the effects of image augmentation and normalization techniques and optimization techniques on model performance.
+% Not an expert on the python programming language, there is a skill gain on this language as its used by the frameworks used to implement these models.
 
-\begin{equation}
-g(z) = \frac{1}{1+ exp(-z)}
- \qquad \text{Sigmoid function}
-\end{equation}
 
-\begin{equation}
-g(z) = max(0,a)
- \qquad \text{Rectified Linear Unit(RELU) function}
-\end{equation}
+%Due to the rise in research in machine vision, there has been an increase in pretrained models available, the project also hopes to explore some of these models as see how they can be reused. %
 
-\begin{equation}
-g(z) = \frac{exp(z)-exp(-z)}{exp(z) + exp(-z)}
- \qquad \text{Hyperbolic tangent function}
-\end{equation}
-
-\begin{figure}
-  \includegraphics[width=\linewidth, scale=0.2]{neuron.PNG}
-  \caption{Neural Network structure}
-  \label{fig:neuron}
-\end{figure}
-
-To get accurate estimation of the output we have to decide on the weights and bias that would achieve this. One popular algorithm used for this is gradient decent. The gradient decent algorithm works as seen below. 
-\begin{enumerate}
- \item  We begin by randomly initialize the weights and the bias
-  \item then by what is called Forward propagation compute $z$ as seen in figure \ref{fig:neuron} then expected output given by the activation function. The formular $z$ can also be wriiten as $WX +b$ where  $W$ and $X$ are the matrix representation of the input and weights.
-  \item Using a loss function, $\mathcal{L}(\hat{y},y)$ that compares the expected output and the estimated output, we can calculate the loss
-  \item Our aim is to minimize this loss as much as possible so we do this by first calculating the partial derivative of the loss function with respect to the weight, $\frac{\partial \mathcal{L}(\hat{y},y)}{\partial W}$ and the bias, $\frac{\partial \mathcal{L}(\hat{y},y)}{\partial b}$
-    \item Then using we can update the weight and bias using the below, where $\alpha$ is the learning rate.
-\[W = W - \alpha \frac{\partial \mathcal{L}(\hat{y},y)}{\partial W}\]
-\[b = b - \alpha \frac{\partial \mathcal{L}(\hat{y},y)}{\partial b}\]
-\item We can then repeat step 2 to 5 till difference of current values and the updated values are at a expected threshold.
-\end{enumerate}
-
-We can stack these neurons together to from a neural network as seen in Figure \ref{fig:neuralnetwork}, which shows a 2 layer networks with one hidden layer with three neurons. The output of the activation function of the hidden layer servers as an input to the output layer. Usually the more complex the problem the deeper the network.
-% maybe find  a diagram of the functions
-In terms of activation functions, the RELU function is usually the activation function of choice for hidden layers. This is because there is less of an effect of the slope of the function as it goes to zero which allows for faster learning. The sigmoid function on the other hand is usually used in the output layer for binary classification.
-
-\begin{figure}
-  \includegraphics[width=\linewidth, scale=0.2]{multi-layer-network.PNG}
-  \caption{Neural Network structure}
-  \label{fig:neuralnetwork}
-\end{figure}
-
-\subsection{Convolutional Neural networks}
-% also explain stride and give the formula for the parameters and where the features come in
-Convolutional neural network, which will be the main network of focus in this project is simply a neural network mainly for inputs with a grid structure such as time series data and particularly images. These networks uses a convolution operation in place of a matrix multiple in atleast one of its layers as defined in \citep{Goodfellow-et-al-2016}. The convolution operation is typically represented with an asterisk:s  and seen below representing. 
-\[ s(t) = (x * w)(t) \] 
-which can be represented as the below, where $x$ is the input and $w$ is the kernal and the output is usually refered to as the feature map.
-\[ s(t) = \int x(a) w(t - a)da \] 
-In terms for matrices can be written as the below where $I$ for example is a two dimensional image and $K$ is the two dimensional kernel
-\[S(i, j) = (I*K)(i, j) = \sum_m \sum_nI(m, n)K(i- m, j- n). \]
-Convolutional networks also include a pooling layer which is a applys a function that replaces an input a with a summary statistic of the nearby input.
-
-% \subsection{Optimization}
-
+%It implements the pre-trained models and models in  \citep{KarpathyCVPR14} using the Keras API and the TensorFlow framework. The project also looks to investigate how these frameworks  research also It also focuses and tries to understand how these frameworks work and how they can be used to implement these models.
+% Another aim of the project will be to explore the difficulties with recreating popular models with the current software and hardware at hand.
+% It also aims to give an understanding from a software engineering perspective on how to begin with constructing these models.
+% The initial architectures will be based off those discussed in \citep{KarpathyCVPR14}, where different models are explored for large-scale video classification with convolutional neural networks.
 
 
 \section{Context}
-    In past few years, with the increase in large labelled datasets such as the Imagenet dataset as discussed in \citep{JiaDeng2009IAlh}, which is an image dataset organized according to the WordNet hierarchy. In this hierachy, a wordnet is a meaningful concept which could also be described by multiple words or word phrases which are called a "synset". In the Imagnet dataset, WordNet contains more than 100,000 synsets, where nouns are the majority of about 80,000 plus. ImageNet aims to provide an average of 1000 images per each synset with the goal of offering tens of millions of images per WordNet. For video data of recent exist the YouTube-8M dataste as dicusssed in \citep{45619}, which a largest multi-label video classification dataset, composed of about 8 million videos for Youtube annotated with a vocabulary of 4803 visual entities. One intresting fact about the Youtube-SM dataset is that a Deep CNN pre-trained on ImageNet was also used to extract the hidden representation immediately prior to the classification layer showing how the available of large datassets can lead to progress in others. Not only have these datasets lead to growth with other datasets but most importantly they have also lead to a rise of various machine learning algorithms used to solve a diverse set of problems. Not only has the increase in datasets helped with this growth but also the increase in the available frames works and libraries used to create these various algorithms. some of these frameworks and libraries used for machine learning include scikitlearn which is a python programming language based library with a long range of user friendly API's for creating machine learning algorithms. \citep{DBLPjournalscorrBuitinckLBPMGNPGGLVJHV13} details the use of scikitlearn and its elegant APIs which has lead to a growth in implementation of models in the machine learning space. In the deep learning space, surveys such as \citep{Nguyen2019} have been taken on the available libraries and frameworks for deep learning with large datasets and the hardware requirements some of these frames works propose.\citep{Wang2019}, is another survey that details the more commonly used deep learning frame works developed by large software houses such as Google, Facebook, and Microsoft, and those developed by the open source community such as Caffe, Caffe2, Tensorflow, MXNet, CNTK, Torch, PyTorch,  MatconvNet, Matlab deep learning and Deep learning tool box, Deeplearning4j to name a few.
-    For the purpose of this paper we will be looking at using Tensorflow and keras libraries and APIs with python as the programming language for building and using popular models. 
-    Where Tensorflow is a free and open-source software library developed by Google and released in November 2015 for dataflow and differentiable programming as described in \citep{8578572} and keras as discussed in \citep{Lux:2019:OSC:3310195.3310202} is a high-level elegant neural networks API that provides tools for easy constructions of models. It also provides access to popular pre-trained models and it is capable of running on top of frameworks like TensorFlow, CNTK, or Theano. 
-    This paper will be looking to experiment with how to implement neural network architectures for video classification particularly looking into deep convolutional neural networks which have been applied to a large pool of visual tasks since the late 1980s as discussed in \citep{doi:10.1162neco_a_00990}.
-        % maybe add here more on video classification and temporal issues
-    % Although primary used for image classification this paper will also be looking at the
-    
-        \section{Related Work}
+%todo find that othert large video dataset%
+In the past few years, with the increase in large labelled datasets, there has been a growth in the available frames works and libraries used to create these various algorithms for various machine learning task.  One of these datasets, for example, is the Imagenet dataset as discussed in \citep{JiaDeng2009IAlh}. 
+This dataset is organized according to the WordNet hierarchy. In this hierarchy, wordnet is a meaningful concept which could also be described by multiple words or word phrases which are called a "synset". 
+In the Imagenet dataset, WordNet contains more than 100,000 synsets, where nouns are the majority of about 80,000 plus. ImageNet aims to provide an average of 1000 images per each synset with the goal to offer tens of millions of images per WordNet. 
+For video data, one of the benchmark datasets is the YouTube-8M dataset, as discussed in \citep{45619}.  
+The YouTube-8M  is one of the largest multi-label video classification dataset, composed of about 8 million videos on Youtube annotated with a vocabulary of 4803 visual entities.  
 
+Some of these frameworks and libraries birth from this growth in datasets used for the advancement of machine learning include scikit-learn.  Scikit-learn is a python programming language based library with a long-range of user-friendly APIs for creating machine learning algorithms. For example, \citep{DBLPjournalscorrBuitinckLBPMGNPGGLVJHV13} details the use of scikit-learn, highlighting it's elegant APIs.  Some of which have, lead to growth in the implementation of models in the machine learning space. In the deep learning space for more sophisticated machine learning problems, surveys such as \citep{Nguyen2019} have been taken on the available libraries and frameworks for deep learning with large datasets. It also details the hardware requirements some of these frames works propose.
+\citep{Wang2019}, is another survey that describes the more commonly used deep learning frameworks developed by large software houses such as Google, Facebook, and Microsoft, and those developed by the open source community such as Caffe, Caffe2, Tensorflow, MXNet, CNTK, Torch, PyTorch,  MatconvNet, Matlab deep learning and Deep learning tool box, Deeplearning4j to name a few.
+    
+For the purpose of this project, I will be looking at using TensorFlow and Keras libraries and APIs with python as the programming language for building and using popular pre-trained models. 
+TensorFlow is a free and open-source software library developed by Google and released in November 2015 for dataflow and differentiable programming as described in \citep{8578572}. While Keras, as discussed in \citep{Lux:2019:OSC:3310195.3310202} is a high-level elegant neural networks API. 
+It provides tools such as layer implementation, algorithm implementation and data augmentation functions for easy constructions of neural networks. It also provides access to popular pre-trained models, and it is capable of running on top of frameworks like TensorFlow, CNTK, or Theano. 
+TensorFlow and Keras make for the perfect fit for the project, as they provide the tools needed for implementing neural network architectures for video classification.
+
+Another concept that has helped with this growth of complexed models is the availability of computing power on cloud infrastructures. This is because of the memory and massive computational power needed by some of these models. One provider of this is Amazon's  AWS Deep Learning Containers (AWS DL Containers).
+These are Docker images with pre-installed deep learning frameworks such as TensorFlow and pytorch for easy and fast implementation. Another provider is Google cloud which provides a range of CPU, GPUs and TPUs capability. 
+This project uses the UCL Cluster, which provides an array of servers with varying RAM sizes,  CPU and GPU capability along with an extensive library of available software.  The clusters are needed as the project deals with machine vision models which are known to require a long running time.  
+    
+\section{Related Work}
+%todo identify different applications and benchmark models
 % talk abour related work here on other models for video classification double check the pedistrain dection paper% 
 There is vast range of problems in which convolutional neural network(CNNs) architectures are used, some of which are in the image classification space which include problems such as object detection for example in pedestrian detection \citep{TomeD2016DCNN} systems, to speech  recognition problems and also facial and body recognition systems which are items in the human emotion recognition and human interaction space \cite{knyazev2017convolutional} .They have also been used in natural language processing for example with modelling sentences as explained in \cite{Kalchbrenner_2014}. 
 Most importantly, CNNs have also been used for video classification for example by using the codec as a spatio-temporal Activity Sensor on videos as described in \citep{ChadhaA2017VCWC}. Apart from convolutional neural networks there are other machine learning methods used for example bag of words models \citep{10.1007978-3-642-28493-9_34}, this can be based on using local visual descriptors, most common of these are histogram of oriented gradients (HOG), histogram of optical flow (HOF) and motion boundary histograms (MBH) descriptors which are very powerful for classification but also computationally expensive as described in \citep{Uijlings2015}. Other methods use recurrent neural networks(RNNs) which is also used in the natural language processing space and in general for sequence data. Since videos are essentially sequence data, RNNs can be used in theory however because RNNs are difficult to train on high-dimensional inputs due to the large input-to-hidden weight matrix there has been some difficulty using them, however there is additional research in the space that has lead to competitive results such as that described in \citep{yang2017tensortrain} which factorizes the input-to-hidden weight matrix using Tensor-Train decomposition to help with efficiency of training these models.

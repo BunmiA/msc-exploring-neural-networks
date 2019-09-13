@@ -7,19 +7,19 @@
 % \makeatother
 
 \title{Investigating and implementing neural network architectures for video classification}
-\author{Olubunmi Aworanti}
+\author{XZDW6}
 \department{Department of Statistical Science}
 
 \maketitle
 \makedeclaration
 
 \begin{abstract} % 300 word limit
-  This paper investigates the design and building of different neural network architectures for video classification using tensorflow and the keras API. It begins by constructing a CNN Neural network architecture as described in \citep{KarpathyCVPR14}, using the keras API and tensorflow packages in python to build the required layer and models. these models where trained using the tensorflow UCF101 dataset. Finally it discusses minor adjustments made on model the performance and problems found with constructing and running these models.
+ This report aims to understand and investigates the design and building of different convolutional neural network architectures for video classification. It does this, using TensorFlow and the Keras API with python and the UCF101 dataset.  It begins by constructing convolutional neural network models as described in \citep{KarpathyCVPR14}. It makes some improvements on these models by, for example, replacing the local response normalization layer used with the more modern batch normalization technique. It explores the use of different optimization methods and the use of different model inputs that improve on the use of temporal features. It also looks at implementing some pre-trained models from the Kera API and tries to improve on their architecture to include temporal features. 
 \end{abstract}
 
-\begin{acknowledgements}
-Acknowledge all the things!
-\end{acknowledgements}
+% \begin{acknowledgements}
+% Acknowledge all the things!
+% \end{acknowledgements}
 
 \setcounter{tocdepth}{2} 
 % Setting this higher means you get contents entries for

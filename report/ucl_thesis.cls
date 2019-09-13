@@ -123,7 +123,8 @@
 %    \begin{macrocode}
 \newcommand \@doctor{Doctor of Philosophy}
 \newcommand \@master{Master of Philosophy}
-\newcommand \@mres{Master of Research}
+% \newcommand \@mres{Master of Research}
+\newcommand \@mres{Master of Data Science}
 \newcommand \@degree@string{\@doctor}
 %    \end{macrocode}
 %  The usual structure of class preamble follows.
@@ -440,6 +441,7 @@
     \begin{center}%
     \@department \\
     University College London\\
+    8275 words\\
     \end{center}%
     \vspace{2em}%
     \begin{center}%
