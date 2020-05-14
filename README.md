@@ -23,7 +23,7 @@ Below shows the accurancy of the various designs
 |  [i3d-kinetics-400](https://tfhub.dev/deepmind/i3d-kinetics-400/1)  |video classification model based on trained for action recognition on Kinetics-400.              |     |            |           |             |
 
  
-
+Future planes will be to explore RNNs and Capsules( as explained in https://arxiv.org/abs/1710.09829_
  
  
  
